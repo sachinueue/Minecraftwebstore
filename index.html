@@ -2,7 +2,6 @@
 <html>
 <head>
   <title>GenZ SMP</title>
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
@@ -19,7 +18,7 @@
     }
 
     .logo {
-      width: 150px;
+      width: 140px;
       margin-top: 20px;
     }
 
@@ -35,64 +34,35 @@
       padding: 15px;
       border-radius: 15px;
       margin: 10px 0;
+      cursor: pointer;
     }
 
-    .highlight {
-      color: #ff4dff;
-      font-size: 20px;
-      font-weight: bold;
+    .active {
+      background: linear-gradient(45deg,#7b2cff,#b84dff);
     }
 
-    .features {
-      background: #2a2f6b;
-      border-radius: 15px;
-      padding: 15px;
-      margin-top: 10px;
-      text-align: left;
+    .section {
+      display: none;
+    }
+
+    .show {
+      display: block;
     }
 
     .btn {
       display: block;
       margin: 10px auto;
-      padding: 14px;
+      padding: 12px;
       width: 90%;
       max-width: 300px;
       border-radius: 12px;
-      text-decoration: none;
+      border: none;
       color: white;
       font-weight: bold;
-      border: none;
     }
 
     .purple {
       background: linear-gradient(45deg,#7b2cff,#b84dff);
-    }
-
-    /* POPUP */
-    .popup {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.7);
-    }
-
-    .popup-content {
-      background: #1b1f4a;
-      padding: 20px;
-      border-radius: 20px;
-      width: 90%;
-      max-width: 350px;
-      margin: 80px auto;
-      text-align: center;
-    }
-
-    .close {
-      float: right;
-      font-size: 25px;
-      cursor: pointer;
     }
 
   </style>
@@ -105,30 +75,23 @@
   <img class="logo" src="https://i.imgur.com/8Km9tLL.png">
 
   <h1>🔥 GenZ SMP</h1>
-  <p>Server IP: genzsmp.mnode.net</p>
+  <p>genzsmp.mnode.net</p>
 
   <!-- MENU -->
   <div class="card">
-    <div class="menu-btn">🏠 Home</div>
-    <div class="menu-btn">🏆 Ranks</div>
-    <div class="menu-btn">🗝️ Keys</div>
+    <div class="menu-btn active" onclick="showTab('home', this)">🏠 Home</div>
+    <div class="menu-btn" onclick="showTab('ranks', this)">🏆 Ranks</div>
+    <div class="menu-btn" onclick="showTab('keys', this)">🗝️ Keys</div>
   </div>
 
-  <!-- ABOUT -->
-  <div class="card">
-    <div class="highlight">About GenZ SMP</div>
-    GenZ SMP ek fun aur competitive Minecraft server hai jaha PvP aur grinding ka system hai.
-
-    <div class="features">
-      ✔ Lag-Free Experience<br>
-      ✔ 24/7 Online Server<br>
-      ✔ Balanced System<br>
-      ✔ Active Support
-    </div>
+  <!-- HOME -->
+  <div id="home" class="section show card">
+    <h2 style="color:#ff4dff;">About GenZ SMP</h2>
+    <p>Fun + PvP Minecraft server with balanced system.</p>
   </div>
 
-  <!-- RANK -->
-  <div class="card">
+  <!-- RANKS -->
+  <div id="ranks" class="section card">
     <h2 style="color:#ff4dff;">Server Ranks</h2>
 
     <h3>+RANK</h3>
@@ -137,31 +100,44 @@
     <button onclick="openPopup()" class="btn purple">🛒 Purchase</button>
   </div>
 
+  <!-- KEYS -->
+  <div id="keys" class="section card">
+    <h2 style="color:#ff4dff;">Crate Keys</h2>
+
+    <h3>Amethyst Key</h3>
+    <p>₹199</p>
+
+    <button onclick="openPopup()" class="btn purple">🛒 Purchase</button>
+  </div>
+
 </div>
 
 <!-- POPUP -->
-<div id="popup" class="popup">
-  <div class="popup-content">
+<div id="popup" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:#000000aa;">
+  <div style="background:#1b1f4a;padding:20px;border-radius:15px;width:90%;max-width:300px;margin:100px auto;">
 
-    <span class="close" onclick="closePopup()">&times;</span>
+    <span onclick="closePopup()" style="float:right;font-size:25px;">×</span>
 
     <h2>Checkout</h2>
 
-    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=yourupiid" width="200">
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=yourupiid">
 
     <p style="font-size:14px;">
-      1. QR scan karo aur pay karo<br>
-      2. Screenshot lo<br>
-      3. Discord ticket open karo<br>
-      4. Screenshot bhejo
+      Scan karo → pay karo → screenshot → Discord
     </p>
-
-    <a href="https://discord.gg/yourlink" class="btn purple">Open Ticket</a>
 
   </div>
 </div>
 
 <script>
+function showTab(tabId, el) {
+  document.querySelectorAll('.section').forEach(e => e.classList.remove('show'));
+  document.getElementById(tabId).classList.add('show');
+
+  document.querySelectorAll('.menu-btn').forEach(b => b.classList.remove('active'));
+  el.classList.add('active');
+}
+
 function openPopup() {
   document.getElementById("popup").style.display = "block";
 }
