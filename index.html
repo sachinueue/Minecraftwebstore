@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GENZ SMP Store</title>
+<title>GenZ SMP Store</title>
 
 <style>
 body {
@@ -36,21 +36,28 @@ body {
   font-size: 14px;
 }
 
-/* LOGO */
+/* LOGO ANIMATION */
+@keyframes logoFloat {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
 .main-logo {
   width: 200px;
   margin: 15px auto;
   display: block;
+  animation: logoFloat 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 15px rgba(255, 79, 216, 0.5));
 }
 
-/* MENU BOX */
+/* MENU */
 .menu {
   background: #1c1f4a;
   border-radius: 25px;
   padding: 15px;
 }
 
-/* MENU BUTTON */
 .menu-btn {
   background: #3a3f7a;
   padding: 18px;
@@ -66,7 +73,6 @@ body {
   transition: 0.3s;
 }
 
-/* LEFT GLOW */
 .menu-btn::before {
   content: "";
   position: absolute;
@@ -79,7 +85,6 @@ body {
   opacity: 0.4;
 }
 
-/* ACTIVE */
 .menu-btn.active {
   background: linear-gradient(45deg, #7b2cff, #ff4fd8);
   color: white;
@@ -89,7 +94,6 @@ body {
   opacity: 1;
 }
 
-/* HOVER */
 .menu-btn:hover {
   transform: scale(1.02);
 }
@@ -158,19 +162,15 @@ function showTab(tab) {
 
 <!-- TOP INFO -->
 <div class="top-info">
-  <div class="info-item">
-    ▶️ genzsmp.mnode.net
-  </div>
-
-  <div class="info-item">
-    💬 Join our Community (Discord)
-  </div>
+  <div class="info-item">▶️ genzsmp.mnode.net</div>
+  <div class="online">🟢 72 Players Online</div>
+  <div class="info-item">💬 Join our Community (Discord)</div>
 </div>
 
 <!-- LOGO -->
-<img class="main-logo" src="file_00000000eba8720b849f8f6929892918.png">
+<img class="main-logo" src="logo.png">
 
-<h1>🔥 GENZ SMP</h1>
+<h1>🔥 GenZ SMP</h1>
 
 <!-- MENU -->
 <div class="menu">
