@@ -25,8 +25,9 @@
     .card {
       background: #1b1f4a;
       border-radius: 20px;
-      padding: 15px;
+      padding: 20px;
       margin: 15px;
+      text-align: left;
     }
 
     .menu-btn {
@@ -35,10 +36,11 @@
       border-radius: 15px;
       margin: 10px 0;
       cursor: pointer;
+      text-align: center;
     }
 
     .active {
-      background: linear-gradient(45deg,#7b2cff,#b84dff);
+      background: linear-gradient(45deg,#7b2cff,#ff4dff);
     }
 
     .section {
@@ -47,6 +49,25 @@
 
     .show {
       display: block;
+    }
+
+    .title {
+      color: #ff4dff;
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .desc {
+      color: #bfbfd9;
+      line-height: 1.6;
+    }
+
+    .features {
+      background: #2a2f6b;
+      border-radius: 15px;
+      padding: 15px;
+      margin-top: 15px;
     }
 
     .btn {
@@ -86,8 +107,22 @@
 
   <!-- HOME -->
   <div id="home" class="section show card">
-    <h2 style="color:#ff4dff;">About GenZ SMP</h2>
-    <p>Fun + PvP Minecraft server with balanced system.</p>
+    <div class="title">About GenZ SMP</div>
+
+    <div class="desc">
+      GenZ SMP is a competitive and fun Minecraft survival server built for players who love progression, PvP, grinding, and community. 
+      Our ranks and crates are designed to enhance your experience without breaking game balance.
+    </div>
+
+    <div class="features">
+      <b>Why Choose GenZ SMP?</b><br><br>
+      ✔ Lag-Free Experience<br>
+      ✔ 24/7 Online Server<br>
+      ✔ Balanced Rank System<br>
+      ✔ Manual & Secure Payments<br>
+      ✔ Active Support Team<br>
+      ✔ Regular Updates
+    </div>
   </div>
 
   <!-- RANKS -->
@@ -112,23 +147,6 @@
 
 </div>
 
-<!-- POPUP -->
-<div id="popup" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:#000000aa;">
-  <div style="background:#1b1f4a;padding:20px;border-radius:15px;width:90%;max-width:300px;margin:100px auto;">
-
-    <span onclick="closePopup()" style="float:right;font-size:25px;">×</span>
-
-    <h2>Checkout</h2>
-
-    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=yourupiid">
-
-    <p style="font-size:14px;">
-      Scan karo → pay karo → screenshot → Discord
-    </p>
-
-  </div>
-</div>
-
 <script>
 function showTab(tabId, el) {
   document.querySelectorAll('.section').forEach(e => e.classList.remove('show'));
@@ -136,14 +154,6 @@ function showTab(tabId, el) {
 
   document.querySelectorAll('.menu-btn').forEach(b => b.classList.remove('active'));
   el.classList.add('active');
-}
-
-function openPopup() {
-  document.getElementById("popup").style.display = "block";
-}
-
-function closePopup() {
-  document.getElementById("popup").style.display = "none";
 }
 </script>
 
