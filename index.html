@@ -1,159 +1,200 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>GenZ SMP</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial;
-      background: #0b0f2a;
-      color: white;
-      text-align: center;
-    }
+<title>GenZ SMP</title>
 
-    .container {
-      padding: 20px;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #0b0f2a;
+  color: white;
+}
 
-    .logo {
-      width: 140px;
-      margin-top: 20px;
-    }
+/* container */
+.container {
+  max-width: 400px;
+  margin: auto;
+  padding: 15px;
+}
 
-    .card {
-      background: #1b1f4a;
-      border-radius: 20px;
-      padding: 20px;
-      margin: 15px;
-      text-align: left;
-    }
+/* logo */
+.logo {
+  width: 100px;
+  border-radius: 20px;
+  display: block;
+  margin: auto;
+}
 
-    .menu-btn {
-      background: #2a2f6b;
-      padding: 15px;
-      border-radius: 15px;
-      margin: 10px 0;
-      cursor: pointer;
-      text-align: center;
-    }
+h1 {
+  text-align: center;
+  margin: 10px 0;
+}
 
-    .active {
-      background: linear-gradient(45deg,#7b2cff,#ff4dff);
-    }
+/* menu */
+.menu {
+  background: #1a1f4a;
+  border-radius: 20px;
+  padding: 10px;
+  margin-top: 20px;
+}
 
-    .section {
-      display: none;
-    }
+.menu-btn {
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 12px;
+  background: #2a2f6b;
+  cursor: pointer;
+  transition: 0.3s;
+}
 
-    .show {
-      display: block;
-    }
+.menu-btn.active {
+  background: linear-gradient(45deg,#a855f7,#ec4899);
+}
 
-    .title {
-      color: #ff4dff;
-      font-size: 24px;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
+/* card */
+.card {
+  background: #1a1f4a;
+  padding: 15px;
+  border-radius: 20px;
+  margin-top: 20px;
+}
 
-    .desc {
-      color: #bfbfd9;
-      line-height: 1.6;
-    }
+/* title */
+.title {
+  font-size: 22px;
+  color: #ec4899;
+  font-weight: bold;
+}
 
-    .features {
-      background: #2a2f6b;
-      border-radius: 15px;
-      padding: 15px;
-      margin-top: 15px;
-    }
+/* product */
+.product {
+  background: #2a2f6b;
+  border-radius: 15px;
+  padding: 15px;
+  margin-top: 15px;
+  text-align: center;
+}
 
-    .btn {
-      display: block;
-      margin: 10px auto;
-      padding: 12px;
-      width: 90%;
-      max-width: 300px;
-      border-radius: 12px;
-      border: none;
-      color: white;
-      font-weight: bold;
-    }
+.product img {
+  width: 100%;
+  border-radius: 10px;
+}
 
-    .purple {
-      background: linear-gradient(45deg,#7b2cff,#b84dff);
-    }
+.price {
+  color: #a855f7;
+  margin: 10px 0;
+}
 
-  </style>
+/* button */
+.btn {
+  background: linear-gradient(45deg,#a855f7,#7c3aed);
+  padding: 10px;
+  border-radius: 10px;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+/* hide */
+.hidden {
+  display: none;
+}
+</style>
 </head>
 
 <body>
 
 <div class="container">
 
-  <img class="logo" src="https://i.imgur.com/8Km9tLL.png">
+<img class="logo" src="https://i.imgur.com/7yUvePI.png">
 
-  <h1>🔥 GenZ SMP</h1>
-  <p>genzsmp.mnode.net</p>
+<h1>🔥 GenZ SMP</h1>
+<p style="text-align:center;">genzsmp.mnode.net</p>
 
-  <!-- MENU -->
-  <div class="card">
-    <div class="menu-btn active" onclick="showTab('home', this)">🏠 Home</div>
-    <div class="menu-btn" onclick="showTab('ranks', this)">🏆 Ranks</div>
-    <div class="menu-btn" onclick="showTab('keys', this)">🗝️ Keys</div>
+<!-- MENU -->
+<div class="menu">
+  <div class="menu-btn active" onclick="showTab('home')">🏠 Home</div>
+  <div class="menu-btn" onclick="showTab('ranks')">🏆 Ranks</div>
+  <div class="menu-btn" onclick="showTab('keys')">🗝️ Keys</div>
+</div>
+
+<!-- HOME -->
+<div id="home" class="card">
+  <div class="title">About GenZ SMP</div>
+  <p>
+  GenZ SMP is a competitive and fun Minecraft survival server built for players who love progression, PvP, grinding, and community. Our ranks and crates are designed to enhance your experience without breaking game balance.
+  </p>
+
+  <div class="card" style="background:#2a2f6b;">
+    <b>Why Choose GenZ SMP?</b><br><br>
+    ✔ Lag-Free Experience<br>
+    ✔ 24/7 Online Server<br>
+    ✔ Balanced Rank System<br>
+    ✔ Manual & Secure Payments<br>
+    ✔ Active Support Team<br>
+    ✔ Regular Updates
+  </div>
+</div>
+
+<!-- RANKS -->
+<div id="ranks" class="card hidden">
+  <div class="title">Server Ranks</div>
+
+  <div class="product">
+    <img src="https://i.imgur.com/x7sR1Rr.png">
+    <h3>PLUS RANK</h3>
+    <div class="price">₹49 / mo</div>
+    <div class="btn">Purchase</div>
   </div>
 
-  <!-- HOME -->
-  <div id="home" class="section show card">
-    <div class="title">About GenZ SMP</div>
-
-    <div class="desc">
-      GenZ SMP is a competitive and fun Minecraft survival server built for players who love progression, PvP, grinding, and community. 
-      Our ranks and crates are designed to enhance your experience without breaking game balance.
-    </div>
-
-    <div class="features">
-      <b>Why Choose GenZ SMP?</b><br><br>
-      ✔ Lag-Free Experience<br>
-      ✔ 24/7 Online Server<br>
-      ✔ Balanced Rank System<br>
-      ✔ Manual & Secure Payments<br>
-      ✔ Active Support Team<br>
-      ✔ Regular Updates
-    </div>
-  </div>
-
-  <!-- RANKS -->
-  <div id="ranks" class="section card">
-    <h2 style="color:#ff4dff;">Server Ranks</h2>
-
-    <h3>+RANK</h3>
-    <p>₹49 / month</p>
-
-    <button onclick="openPopup()" class="btn purple">🛒 Purchase</button>
-  </div>
-
-  <!-- KEYS -->
-  <div id="keys" class="section card">
-    <h2 style="color:#ff4dff;">Crate Keys</h2>
-
-    <h3>Amethyst Key</h3>
-    <p>₹199</p>
-
-    <button onclick="openPopup()" class="btn purple">🛒 Purchase</button>
+  <div class="product">
+    <img src="https://i.imgur.com/9YQZ8ZK.png">
+    <h3>VIP RANK</h3>
+    <div class="price">₹299 / mo</div>
+    <div class="btn">Purchase</div>
   </div>
 
 </div>
 
-<script>
-function showTab(tabId, el) {
-  document.querySelectorAll('.section').forEach(e => e.classList.remove('show'));
-  document.getElementById(tabId).classList.add('show');
+<!-- KEYS -->
+<div id="keys" class="card hidden">
+  <div class="title">Crate Keys</div>
 
-  document.querySelectorAll('.menu-btn').forEach(b => b.classList.remove('active'));
-  el.classList.add('active');
+  <div class="product">
+    <img src="https://i.imgur.com/zY6XH7Y.png">
+    <h3>AMETHYST KEY</h3>
+    <div class="price">₹199</div>
+    <div class="btn">Purchase</div>
+  </div>
+
+  <div class="product">
+    <img src="https://i.imgur.com/zY6XH7Y.png">
+    <h3>PRIME KEY</h3>
+    <div class="price">₹149</div>
+    <div class="btn">Purchase</div>
+  </div>
+
+</div>
+
+</div>
+
+<script>
+function showTab(tab) {
+
+  document.getElementById("home").classList.add("hidden");
+  document.getElementById("ranks").classList.add("hidden");
+  document.getElementById("keys").classList.add("hidden");
+
+  document.getElementById(tab).classList.remove("hidden");
+
+  let btns = document.getElementsByClassName("menu-btn");
+  for (let i = 0; i < btns.length; i++) {
+    btns[i].classList.remove("active");
+  }
+
+  event.target.classList.add("active");
 }
 </script>
 
