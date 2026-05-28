@@ -31,9 +31,11 @@ body {
   color: #ccc;
 }
 
-.online {
-  color: #00ff88;
-  font-size: 14px;
+/* CLICKABLE DISCORD */
+.discord-link {
+  cursor: pointer;
+  font-weight: bold;
+  color: white;
 }
 
 /* LOGO ANIMATION */
@@ -58,6 +60,7 @@ body {
   padding: 15px;
 }
 
+/* FIX: LEFT LINE REMOVED */
 .menu-btn {
   background: #3a3f7a;
   padding: 18px;
@@ -69,29 +72,18 @@ body {
   gap: 12px;
   font-size: 18px;
   color: #bfbfd9;
-  position: relative;
   transition: 0.3s;
 }
 
+/* REMOVE LINE COMPLETELY */
 .menu-btn::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 6px;
-  height: 100%;
-  border-radius: 20px;
-  background: linear-gradient(#7b2cff, #ff4fd8);
-  opacity: 0.4;
+  display: none;
 }
 
+/* ACTIVE */
 .menu-btn.active {
   background: linear-gradient(45deg, #7b2cff, #ff4fd8);
   color: white;
-}
-
-.menu-btn.active::before {
-  opacity: 1;
 }
 
 .menu-btn:hover {
@@ -116,32 +108,6 @@ body {
   margin-top: 20px;
   text-align: left;
 }
-
-/* PRODUCT */
-.product {
-  background: #151844;
-  padding: 15px;
-  border-radius: 15px;
-  margin-top: 15px;
-  text-align: center;
-}
-
-.product img {
-  width: 120px;
-  border-radius: 10px;
-}
-
-.price {
-  color: #a970ff;
-  margin: 10px 0;
-}
-
-.btn {
-  background: linear-gradient(45deg, #7b2cff, #ff4fd8);
-  padding: 10px 20px;
-  border-radius: 10px;
-  display: inline-block;
-}
 </style>
 
 <script>
@@ -151,6 +117,11 @@ function showTab(tab) {
 
   document.getElementById(tab).classList.add("active");
   document.getElementById("btn-" + tab).classList.add("active");
+}
+
+/* DISCORD CLICK */
+function openDiscord() {
+  window.open("https://discord.gg/YOUR-LINK", "_blank");
 }
 </script>
 
@@ -162,9 +133,13 @@ function showTab(tab) {
 
 <!-- TOP INFO -->
 <div class="top-info">
-  <div class="info-item">▶️ genzsmp.mnode.net</div>
-  <div class="online">🟢 72 Players Online</div>
-  <div class="info-item">💬 Join our Community (Discord)</div>
+  <div class="info-item">
+    ▶️ genzsmp.mnode.net
+  </div>
+
+  <div class="info-item discord-link" onclick="openDiscord()">
+    💬 Join our Community (Discord)
+  </div>
 </div>
 
 <!-- LOGO -->
@@ -186,14 +161,6 @@ function showTab(tab) {
     <p>
       GenZ SMP is a competitive and fun Minecraft survival server built for players who love progression, PvP, grinding, and community.
     </p>
-
-    <div class="card" style="background:#2a2f6b;">
-      ✔ Lag-Free Experience<br>
-      ✔ 24/7 Online Server<br>
-      ✔ Balanced Rank System<br>
-      ✔ Secure Payments<br>
-      ✔ Active Support Team
-    </div>
   </div>
 </div>
 
@@ -201,14 +168,7 @@ function showTab(tab) {
 <div id="ranks" class="section">
   <div class="card">
     <h2 style="color:#ff4fd8;">Server Ranks</h2>
-
-    <div class="product">
-      <img src="https://i.imgur.com/your-rank.png">
-      <h3>+RANK</h3>
-      <div class="price">₹49</div>
-      <div class="btn">Purchase</div>
-    </div>
-
+    <p>Ranks coming soon...</p>
   </div>
 </div>
 
@@ -216,14 +176,7 @@ function showTab(tab) {
 <div id="keys" class="section">
   <div class="card">
     <h2 style="color:#ff4fd8;">Crate Keys</h2>
-
-    <div class="product">
-      <img src="https://i.imgur.com/your-key.png">
-      <h3>AMETHYST KEY</h3>
-      <div class="price">₹199</div>
-      <div class="btn">Purchase</div>
-    </div>
-
+    <p>Keys coming soon...</p>
   </div>
 </div>
 
