@@ -1,186 +1,142 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GENZ SMP Store</title>
+<meta charset="UTF-8">
+<title>GENZSMP Store</title>
 
 <style>
 body {
   margin: 0;
   font-family: Arial;
-  background: #0b0f2a;
+  background: linear-gradient(135deg, #000000, #1a0000);
   color: white;
   text-align: center;
 }
 
-.container {
+/* HEADER */
+.header {
   padding: 20px;
-}
-
-/* TOP INFO */
-.top-info {
-  margin-bottom: 15px;
-}
-
-.info-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  justify-content: center;
-  margin-bottom: 10px;
-  color: #ccc;
-}
-
-/* CLICKABLE DISCORD */
-.discord-link {
-  cursor: pointer;
+  font-size: 40px;
   font-weight: bold;
-  color: white;
-}
-
-/* LOGO ANIMATION */
-@keyframes logoFloat {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
-}
-
-.main-logo {
-  width: 200px;
-  margin: 15px auto;
-  display: block;
-  animation: logoFloat 3s ease-in-out infinite;
-  filter: drop-shadow(0 0 15px rgba(255, 79, 216, 0.5));
+  color: red;
+  text-shadow: 0 0 10px red;
 }
 
 /* MENU */
 .menu {
-  background: #1c1f4a;
-  border-radius: 25px;
-  padding: 15px;
+  margin: 20px;
 }
-
-/* FIX: LEFT LINE REMOVED */
-.menu-btn {
-  background: #3a3f7a;
-  padding: 18px;
-  margin: 12px 0;
-  border-radius: 18px;
+.menu button {
+  padding: 12px 20px;
+  margin: 5px;
+  border: none;
+  background: red;
+  color: white;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 18px;
-  color: #bfbfd9;
+  border-radius: 8px;
   transition: 0.3s;
 }
+.menu button:hover {
+  background: darkred;
+}
 
-/* REMOVE LINE COMPLETELY */
-.menu-btn::before {
+/* SECTION */
+.section {
   display: none;
+  padding: 20px;
+}
+
+/* CARDS */
+.card {
+  background: #111;
+  margin: 15px auto;
+  padding: 20px;
+  width: 250px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(255,0,0,0.5);
+  transition: 0.3s;
+}
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* BUY BUTTON */
+.buy-btn {
+  margin-top: 10px;
+  padding: 8px 15px;
+  background: limegreen;
+  border: none;
+  color: black;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: bold;
 }
 
 /* ACTIVE */
-.menu-btn.active {
-  background: linear-gradient(45deg, #7b2cff, #ff4fd8);
-  color: white;
-}
-
-.menu-btn:hover {
-  transform: scale(1.02);
-}
-
-/* SECTIONS */
-.section {
-  display: none;
-  margin-top: 20px;
-}
-
-.section.active {
+.active {
   display: block;
 }
-
-/* CARD */
-.card {
-  background: #1c1f4a;
-  padding: 20px;
-  border-radius: 20px;
-  margin-top: 20px;
-  text-align: left;
-}
 </style>
-
-<script>
-function showTab(tab) {
-  document.querySelectorAll(".section").forEach(e => e.classList.remove("active"));
-  document.querySelectorAll(".menu-btn").forEach(e => e.classList.remove("active"));
-
-  document.getElementById(tab).classList.add("active");
-  document.getElementById("btn-" + tab).classList.add("active");
-}
-
-/* DISCORD CLICK */
-function openDiscord() {
-  window.open("https://discord.gg/4p4Ab7kZt", "_blank");
-}
-</script>
-
 </head>
 
 <body>
 
-<div class="container">
+<div class="header">GENZSMP STORE</div>
 
-<!-- TOP INFO -->
-<div class="top-info">
-  <div class="info-item">
-    🌟 genzsmp.mnode.net
-  </div>
-
-  <div class="info-item discord-link" onclick="openDiscord()">
-      💬 Join our Community 
-  </div>
-</div>
-
-<!-- LOGO -->
-<img class="main-logo" src="file_00000000eba8720b849f8f6929892918.png">
-
-<h1>🔥 GENZ SMP</h1>
-
-<!-- MENU -->
 <div class="menu">
-  <div id="btn-home" class="menu-btn active" onclick="showTab('home')">🏠 Home</div>
-  <div id="btn-ranks" class="menu-btn" onclick="showTab('ranks')">🏆 Ranks</div>
-  <div id="btn-keys" class="menu-btn" onclick="showTab('keys')">🗝️ Keys</div>
+  <button onclick="show('home')">Home</button>
+  <button onclick="show('ranks')">Ranks</button>
+  <button onclick="show('keys')">Keys</button>
+  <button onclick="show('terms')">Terms</button>
 </div>
 
 <!-- HOME -->
 <div id="home" class="section active">
-  <div class="card">
-    <h2 style="color:#ff4fd8;">About GenZ SMP</h2>
-    <p>
-      GenZ SMP is a competitive and fun Minecraft survival server built for players who love progression, PvP, grinding, and community.
-    </p>
-  </div>
+  <h2>Welcome to GENZSMP Store</h2>
+  <p>Buy ranks & keys to upgrade your gameplay 🔥</p>
 </div>
 
 <!-- RANKS -->
 <div id="ranks" class="section">
-  <div class="card">
-    <h2 style="color:#ff4fd8;">Server Ranks</h2>
-    <p>Ranks coming soon...</p>
-  </div>
+  <h2>Ranks</h2>
+
+  <div class="card">VIP - ₹99<br><button class="buy-btn">Buy</button></div>
+  <div class="card">MVP - ₹199<br><button class="buy-btn">Buy</button></div>
+  <div class="card">ELITE - ₹299<br><button class="buy-btn">Buy</button></div>
+  <div class="card">LEGEND - ₹499<br><button class="buy-btn">Buy</button></div>
+  <div class="card">OWNER - ₹999<br><button class="buy-btn">Buy</button></div>
+
 </div>
 
 <!-- KEYS -->
 <div id="keys" class="section">
-  <div class="card">
-    <h2 style="color:#ff4fd8;">Crate Keys</h2>
-    <p>Keys coming soon...</p>
-  </div>
-</div>
+  <h2>Keys</h2>
+
+  <div class="card">Common Key - ₹49<br><button class="buy-btn">Buy</button></div>
+  <div class="card">Rare Key - ₹99<br><button class="buy-btn">Buy</button></div>
+  <div class="card">Epic Key - ₹149<br><button class="buy-btn">Buy</button></div>
+  <div class="card">Mythic Key - ₹199<br><button class="buy-btn">Buy</button></div>
+  <div class="card">Legendary Key - ₹299<br><button class="buy-btn">Buy</button></div>
 
 </div>
+
+<!-- TERMS -->
+<div id="terms" class="section">
+  <h2>Terms & Conditions</h2>
+  <p>No refunds after purchase.</p>
+  <p>Items are virtual (Minecraft server only).</p>
+  <p>Chargeback = Permanent ban.</p>
+
+  <h3>Refund Policy</h3>
+  <p>Refund only if payment failed or item not received (proof required).</p>
+</div>
+
+<script>
+function show(id) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+</script>
 
 </body>
 </html>
