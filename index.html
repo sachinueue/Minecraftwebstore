@@ -2,21 +2,20 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GENZSMP Store</title>
 
 <style>
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: #0c0c0c;
+  font-family: Arial;
+  background: #0b0b0f;
   color: white;
 }
 
 /* HEADER */
 .header {
   text-align: center;
-  padding: 20px;
+  padding: 30px;
 }
 
 .logo {
@@ -24,53 +23,51 @@ body {
 }
 
 .server-name {
-  margin-top: 10px;
-  background: #1a1a1a;
+  background: #1c1c22;
   display: inline-block;
   padding: 8px 20px;
-  border-radius: 10px;
-  font-weight: bold;
+  border-radius: 8px;
+  margin-top: 10px;
 }
 
-/* FEATURE CARD */
-.feature {
+/* MAIN RANK BOX */
+.rank-box {
+  background: linear-gradient(135deg, #1e90ff, #0077ff);
   margin: 20px;
-  background: linear-gradient(135deg, #1e90ff, #007bff);
+  padding: 25px;
   border-radius: 20px;
-  padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.feature-text {
-  text-align: left;
+.rank-text {
+  max-width: 60%;
 }
 
-.feature h2 {
-  margin: 0;
+.rank-title {
+  font-size: 28px;
+  font-weight: bold;
 }
 
-.feature ul {
-  padding-left: 20px;
-  font-size: 14px;
+.rank-img {
+  width: 120px;
 }
 
 /* GRID */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
   padding: 20px;
 }
 
 /* CARD */
 .card {
-  background: #161616;
+  background: #15151c;
   border-radius: 15px;
-  padding: 15px;
+  padding: 20px;
   text-align: center;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
   transition: 0.3s;
 }
 
@@ -78,134 +75,114 @@ body {
   transform: translateY(-5px);
 }
 
-.card img {
-  width: 50px;
-}
-
+/* PRICE */
 .price {
+  margin: 10px 0;
   color: #aaa;
-  margin: 5px 0;
 }
 
-/* BUTTON */
-.btn {
+/* BUY BUTTON */
+.buy {
   background: #1e90ff;
-  border: none;
   padding: 10px;
-  width: 100%;
+  border: none;
   border-radius: 8px;
   color: white;
   cursor: pointer;
-  margin-top: 10px;
+  width: 100%;
+  font-weight: bold;
 }
 
-.qty {
-  display: flex;
-  justify-content: center;
-  gap: 5px;
-  margin-top: 10px;
-}
-
-.qty button {
-  background: #222;
-  border: none;
-  padding: 5px 10px;
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.qty button.active {
-  background: #1e90ff;
+.buy:hover {
+  background: #0077ff;
 }
 </style>
-
 </head>
 
 <body>
 
 <!-- HEADER -->
 <div class="header">
-  <img src="https://cdn-icons-png.flaticon.com/512/590/590685.png" class="logo">
+  <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" class="logo">
   <div class="server-name">GENZSMP.NET</div>
 </div>
 
-<!-- FEATURE -->
-<div class="feature">
-  <div class="feature-text">
-    <h2>Donut+ Rank</h2>
-    <p>(30 Day Subscription)</p>
-    <ul>
-      <li>+3 Homes</li>
-      <li>/fly in lobbies</li>
-      <li>Priority Queue</li>
-      <li>Faster Auction</li>
-    </ul>
+<!-- MAIN RANK -->
+<div class="rank-box">
+  <div class="rank-text">
+    <div class="rank-title">🔥 Donut+ Rank</div>
+    <p>+Fly • +Homes • Priority Queue • Faster Auction</p>
   </div>
+  <img src="https://mc-heads.net/avatar/Notch" class="rank-img">
+</div>
+
+<!-- RANKS -->
+<div class="grid">
+
+  <div class="card">
+    <h3>VIP</h3>
+    <div class="price">₹99</div>
+    <button class="buy">Buy</button>
+  </div>
+
+  <div class="card">
+    <h3>MVP</h3>
+    <div class="price">₹199</div>
+    <button class="buy">Buy</button>
+  </div>
+
+  <div class="card">
+    <h3>ELITE</h3>
+    <div class="price">₹299</div>
+    <button class="buy">Buy</button>
+  </div>
+
+  <div class="card">
+    <h3>LEGEND</h3>
+    <div class="price">₹499</div>
+    <button class="buy">Buy</button>
+  </div>
+
+  <div class="card">
+    <h3>OWNER</h3>
+    <div class="price">₹999</div>
+    <button class="buy">Buy</button>
+  </div>
+
 </div>
 
 <!-- KEYS -->
 <div class="grid">
 
-<div class="card">
-  <img src="https://cdn-icons-png.flaticon.com/512/861/861060.png">
-  <h3>Common</h3>
-  <div class="price">₹49</div>
-  <div class="qty">
-    <button class="active">1x</button>
-    <button>5x</button>
-    <button>10x</button>
+  <div class="card">
+    <h3>Common Key</h3>
+    <div class="price">₹49</div>
+    <button class="buy">Buy</button>
   </div>
-  <button class="btn">Add to Cart</button>
-</div>
 
-<div class="card">
-  <img src="https://cdn-icons-png.flaticon.com/512/861/861060.png">
-  <h3>Prime</h3>
-  <div class="price">₹99</div>
-  <div class="qty">
-    <button class="active">1x</button>
-    <button>5x</button>
-    <button>10x</button>
+  <div class="card">
+    <h3>Prime Key</h3>
+    <div class="price">₹99</div>
+    <button class="buy">Buy</button>
   </div>
-  <button class="btn">Add to Cart</button>
-</div>
 
-<div class="card">
-  <img src="https://cdn-icons-png.flaticon.com/512/861/861060.png">
-  <h3>Gold</h3>
-  <div class="price">₹149</div>
-  <div class="qty">
-    <button class="active">1x</button>
-    <button>5x</button>
-    <button>10x</button>
+  <div class="card">
+    <h3>Gold Key</h3>
+    <div class="price">₹149</div>
+    <button class="buy">Buy</button>
   </div>
-  <button class="btn">Add to Cart</button>
-</div>
 
-<div class="card">
-  <img src="https://cdn-icons-png.flaticon.com/512/861/861060.png">
-  <h3>Amethyst</h3>
-  <div class="price">₹199</div>
-  <div class="qty">
-    <button class="active">1x</button>
-    <button>5x</button>
-    <button>10x</button>
+  <div class="card">
+    <h3>Amethyst Key</h3>
+    <div class="price">₹199</div>
+    <button class="buy">Buy</button>
   </div>
-  <button class="btn">Add to Cart</button>
-</div>
 
-<div class="card">
-  <img src="https://cdn-icons-png.flaticon.com/512/861/861060.png">
-  <h3>Crimson</h3>
-  <div class="price">₹249</div>
-  <div class="qty">
-    <button class="active">1x</button>
-    <button>5x</button>
-    <button>10x</button>
+  <div class="card">
+    <h3>Crimson Key</h3>
+    <div class="price">₹249</div>
+    <button class="buy">Buy</button>
   </div>
-  <button class="btn">Add to Cart</button>
-</div>
 
 </div>
 
