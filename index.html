@@ -1,190 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>GENZSMP Store</title>
-
-<style>
-body {
-  margin: 0;
-  font-family: Arial;
-  background: #0b0b0f;
-  color: white;
-}
-
-/* HEADER */
-.header {
-  text-align: center;
-  padding: 30px;
-}
-
-.logo {
-  width: 80px;
-}
-
-.server-name {
-  background: #1c1c22;
-  display: inline-block;
-  padding: 8px 20px;
-  border-radius: 8px;
-  margin-top: 10px;
-}
-
-/* MAIN RANK BOX */
-.rank-box {
-  background: linear-gradient(135deg, #1e90ff, #0077ff);
-  margin: 20px;
-  padding: 25px;
-  border-radius: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.rank-text {
-  max-width: 60%;
-}
-
-.rank-title {
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.rank-img {
-  width: 120px;
-}
-
-/* GRID */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  padding: 20px;
-}
-
-/* CARD */
-.card {
-  background: #15151c;
-  border-radius: 15px;
-  padding: 20px;
-  text-align: center;
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-}
-
-/* PRICE */
-.price {
-  margin: 10px 0;
-  color: #aaa;
-}
-
-/* BUY BUTTON */
-.buy {
-  background: #1e90ff;
-  padding: 10px;
-  border: none;
-  border-radius: 8px;
-  color: white;
-  cursor: pointer;
-  width: 100%;
-  font-weight: bold;
-}
-
-.buy:hover {
-  background: #0077ff;
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Store | FireMC</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
+  <header class="fade-in">
+    <h1>🛒 FireMC Store</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="store.html">Store</a>
+    </nav>
+  </header>
 
-<!-- HEADER -->
-<div class="header">
-  <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" class="logo">
-  <div class="server-name">GENZSMP.MNODE.NET</div>
-</div>
+  <main class="slide-up">
+    <div class="coins">💰 Coins: <span id="coinBalance">1000</span></div>
+    <div class="shop">
+      <div class="item-card">
+        <h3>VIP Rank</h3>
+        <p>500 Coins</p>
+        <button onclick="buyItem(500)">Buy</button>
+      </div>
+      <div class="item-card">
+        <h3>Crate Key x3</h3>
+        <p>300 Coins</p>
+        <button onclick="buyItem(300)">Buy</button>
+      </div>
+      <div class="item-card">
+        <h3>Fly Access</h3>
+        <p>750 Coins</p>
+        <button onclick="buyItem(750)">Buy</button>
+      </div>
+    </div>
+  </main>
 
-<!-- MAIN RANK -->
-<div class="rank-box">
-  <div class="rank-text">
-    <div class="rank-title">🔥 Genzsmp Ranks</div>
-    <p>GENZSMP STORE</p>
-  </div>
-  <img src="https://mc-heads.net/avatar/Notch" class="rank-img">
-</div>
+  <footer class="fade-in">
+    <p>&copy; 2025 FireMC Server</p>
+  </footer>
 
-<!-- RANKS -->
-<div class="grid">
-
-  <div class="card">
-    <h3>VIP</h3>
-    <div class="price">₹99</div>
-    <button class="buy">Buy</button>
-  </div>
-
-  <div class="card">
-    <h3>MVP</h3>
-    <div class="price">₹199</div>
-    <button class="buy">Buy</button>
-  </div>
-
-  <div class="card">
-    <h3>ELITE</h3>
-    <div class="price">₹299</div>
-    <button class="buy">Buy</button>
-  </div>
-
-  <div class="card">
-    <h3>LEGEND</h3>
-    <div class="price">₹499</div>
-    <button class="buy">Buy</button>
-  </div>
-
-  <div class="card">
-    <h3>OWNER</h3>
-    <div class="price">₹999</div>
-    <button class="buy">Buy</button>
-  </div>
-
-</div>
-
-<!-- KEYS -->
-<div class="grid">
-
-  <div class="card">
-    <h3>Common Key</h3>
-    <div class="price">₹49</div>
-    <button class="buy">Buy</button>
-  </div>
-
-  <div class="card">
-    <h3>Prime Key</h3>
-    <div class="price">₹99</div>
-    <button class="buy">Buy</button>
-  </div>
-
-  <div class="card">
-    <h3>Gold Key</h3>
-    <div class="price">₹149</div>
-    <button class="buy">Buy</button>
-  </div>
-
-  <div class="card">
-    <h3>Amethyst Key</h3>
-    <div class="price">₹199</div>
-    <button class="buy">Buy</button>
-  </div>
-
-  <div class="card">
-    <h3>Crimson Key</h3>
-    <div class="price">₹249</div>
-    <button class="buy">Buy</button>
-  </div>
-
-</div>
-
+  <script src="coins.js"></script>
 </body>
 </html>
